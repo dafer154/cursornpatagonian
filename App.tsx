@@ -9,19 +9,28 @@
  */
 
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { Alert, StyleSheet, View, Text, Image } from 'react-native';
+
+import { DefaultButton } from './src/components';
 
 import { colors } from './src/utils/theme';
-import { DEVICE_WIDTH, DEVICE_HEIGHT } from './src/utils/dimensions';
+import { DEVICE_WIDTH } from './src/utils/dimensions';
+
+const showAlert = () => {
+  Alert.alert('Hola');
+};
 
 const App = () => {
-  console.log('Device Height', DEVICE_HEIGHT);
-  console.log('Device Width', DEVICE_WIDTH);
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Texto</Text>
-      <Text>Subtitulo SIIUUU</Text>
-      <Image source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} style={ styles.image } resizeMode="contain" />
+      <Text>Subtitulo SIIUUUoooo</Text>
+      <Image
+        source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+        style={styles.image}
+        resizeMode="contain"
+      />
+      <DefaultButton onPress={showAlert} />
     </View>
   );
 };
